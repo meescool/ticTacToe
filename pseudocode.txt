@@ -1,0 +1,31 @@
+Tic Tac Toe
+
+This game takes a 3x3 grid, where there are two players. 
+Each player is either an X or an O. 
+Each player takes a turn to place their respective symbol on 
+a square in the 3x3 grid.
+The first player to place 3 of their symbols in a row in a 
+row, column or diagonal, wins the game.
+If the grid is filled before either player achieves a win,
+then there is a draw.
+
+For this program, it will start the game for the user, giving them the
+option to choose either symbol as an option.
+Next it will start the game, by random, with either the player or 
+the computer starting.
+Every time the computer has the chance to play, it will give a small
+wait time to simulate the computer thinking.
+Each turn will show the 3x3 grid updated with the respective slots marked.
+Once the table is full or if there is a winner, then the game will end.
+
+It'll ask the user if they want to play again.
+
+Finally will show final tally.
+
+Example of the grid:
+
+ 1 | 2 | 3
+===========   
+ 6 | 5 | 4  
+===========
+ 7 | 8 | 9  
