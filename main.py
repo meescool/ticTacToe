@@ -39,8 +39,8 @@ def rules():
 def main():
     print("Welcome to Tic Tac Toe!!")
     rules()
-    p.setPlayer()
-
+    player = p.setPlayer()
+    cpu = c.setCPU(player)
 
 
 if __name__ == "__main__":

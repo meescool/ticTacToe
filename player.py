@@ -1,15 +1,19 @@
-def showCharacters():
-    characters = [' o ',' x ',' <3',' $ ','zzz']
-    i = 1
+import util as u
 
-    for c in characters:
-        print( i, ') ', c)
-        i += 1
 
 def setPlayer():
+    player = {}
     print('Lets choose your character!')
     print('You can choose from any of the characters\n'
         + 'seen below: ')
-    showCharacters()
+    u.showCharacters()
     
-    op = input('which one do you want?')
+    op = u.validNum(input('which one do you want?'), 1, 5)
+    player = {
+        'char': u.characters[op],
+        'plays': [],
+        'wins': 0,
+    }
+
+    print('You chose: ', player['char'])
+    return player
