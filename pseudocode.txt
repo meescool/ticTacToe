@@ -29,3 +29,13 @@ Example of the grid:
  6 | 5 | 4  
 ===========
  7 | 8 | 9  
+
+
+How to store each of the players marks:
+Use a dictionary or an array. Ask the player for a spot and the data structure
+will be populated with the player's character.
+
+How to check when there is a win:
+Traverse through the data structure and check if there are any matches to end 
+the round.
+Need to do more research to find a better way for this. 

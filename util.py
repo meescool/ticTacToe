@@ -3,11 +3,11 @@ import time
 characters = [' o ',' x ',' <3',' $ ','zzz']
 
 
-def validNum(userIn, min, max):
+def validNum(prompt, min, max):
     '''
     This function returns the number if it's a valid number
     '''
-
+    userIn = input(prompt)
     while True:
         try:
             num = int(userIn)
@@ -16,7 +16,7 @@ def validNum(userIn, min, max):
                 return num
 
         except ValueError:
-              print('Please enter a number between ', min , ' and ', max)
+              print('Invalid input!', 'Please enter a number between ', min , ' and ', max)
               userIn = input()
 
 

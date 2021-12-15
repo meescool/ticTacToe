@@ -8,7 +8,7 @@ def setPlayer():
         + 'seen below: ')
     u.showCharacters()
     
-    op = u.validNum(input('which one do you want? '), 1, 5)
+    op = u.validNum('which one do you want? ', 1, 5)
     player = {
         'char': u.characters[op],
         'plays': [],
