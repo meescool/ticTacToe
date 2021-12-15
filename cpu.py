@@ -7,7 +7,6 @@ def cpuChoose(type, playerChar):
     if type == 'c':
         while True:
             op = random.choice(u.characters)
-            print( op)
             if op != playerChar:
                 return op
         
@@ -22,5 +21,5 @@ def setCPU(player):
         'wins': 0
     }
 
-    print('The computer chose: ', cpu)
+    print('The computer chose: ', cpu['char'])
     return cpu

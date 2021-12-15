@@ -7,7 +7,8 @@ Date: 12/9/2021
 
 import player as p
 import cpu as c
-import grid as g
+import grid as gr
+import game as ga
 def rules():
     print('These are rules of the game')
     print('---------------------------')
@@ -41,6 +42,8 @@ def main():
     rules()
     player = p.setPlayer()
     cpu = c.setCPU(player)
+    ga.playGame(player, cpu)
+
 
 
 if __name__ == "__main__":

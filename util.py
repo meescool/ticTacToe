@@ -19,6 +19,22 @@ def validNum(userIn, min, max):
               print('Please enter a number between ', min , ' and ', max)
               userIn = input()
 
+
+def validYN (prompt):
+    while True:
+        userIn = input(prompt)
+        if(userIn == 'y' or userIn == 'yes'):
+            return True
+        if(userIn == 'n' or userIn == 'no'):
+            return False
+        else:
+            print('Invalid input!', end =" " )
+            
+
+
+        
+
+
 def showCharacters():
     
     i = 1
