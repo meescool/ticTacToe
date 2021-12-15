@@ -22,4 +22,5 @@ def setCPU(player):
     }
 
     print('The computer chose: ', cpu['char'])
+    print()
     return cpu

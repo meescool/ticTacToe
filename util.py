@@ -16,7 +16,7 @@ def validNum(prompt, min, max):
                 return num
 
         except ValueError:
-              print('Invalid input!', 'Please enter a number between ', min , ' and ', max)
+              print('Invalid input!', 'Please enter a number between ', min , ' and ', max, ' ')
               userIn = input()
 
 
