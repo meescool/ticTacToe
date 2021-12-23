@@ -25,6 +25,7 @@ def cpuTurn(cpu, marks):
 def printWinner(mark, player, cpu, ):
     
     if(mark == player['char']):
+        player['wins'] += 1
         print("Hurray! You won this round!")
     else:
         print("CPU won. Better luck next time!")
@@ -32,30 +33,31 @@ def printWinner(mark, player, cpu, ):
 
         
 def checkWinner(player, cpu, marks):
-    if(marks[0] == marks[1] or marks[0] == marks[4] or marks[0] == marks[3]):
-        if(marks[4] == marks[8] and marks[4] != '   '):
-            printWinner(marks[4], player, cpu)
-        elif(marks[1] == marks[2] and marks[1] != '   '):
-            printWinner(marks[1], player, cpu)
-        elif(marks[3] == marks[6] and marks[3] != '   '):
-            printWinner(marks[3], player, cpu)
-        elif(marks[1] == marks[4] and marks[4] == marks[7] and marks[1] != '   '):
-            printWinner(marks[1], player, cpu)
-        else:
-            return False
-    elif(marks[6] == marks[7] or marks[6] == marks[4]):
-        if(marks[4] == marks[2] and marks[4] != '   '):
-            printWinner(marks[4], player, cpu)
-        elif (marks[7] == marks[8] and marks[7] != '   '):
-            printWinner(marks[7], player, cpu)
-        elif(marks[7] == marks[4] and marks[4] == marks[1] and marks[7] != '   '):
-            printWinner(marks[7], player, cpu)
-        else:
-            return False
+    if(marks[0] == marks[1] and marks[0] == marks[2] and marks[0] != '   '):
+        printWinner(marks[0], player, cpu)
+    elif(marks[0] == marks[4] and marks[0] == marks[8] and marks[0] != '   '):
+        printWinner(marks[0], player, cpu)
+    elif(marks[0] == marks[3] and marks[0] == marks[6] and marks[0] != '   '):
+        printWinner(marks[0], player, cpu)
+    
+    elif(marks[1] == marks[4] and marks[1] == marks[7] and marks[1] != '   '):
+        printWinner(marks[1], player, cpu)
+
+    elif(marks[2] == marks[4] and marks[2] == marks[6] and marks[2] != '   '):
+        printWinner(marks[2], player, cpu)
+    elif(marks[2] == marks[5] and marks[2] == marks[8] and marks[2] != '   '):
+        printWinner(marks[2], player, cpu)
+
+    elif(marks[3] == marks[4] and marks[3] == marks[5] and marks[3] != '   '):
+        printWinner(marks[3], player, cpu)
+
+    elif(marks[6] == marks[7] and marks[6] == marks[8] and marks[6] != '   '):
+        printWinner(marks[6], player, cpu)
     else:
         return False
-    return True
 
+    return True
+        
 
 def playRound(player, cpu):
     marks = ['   ','   ','   ','   ','   ','   ','   ','   ','   ']
@@ -67,24 +69,30 @@ def playRound(player, cpu):
         gr.grid(marks)
         print()
         if(checkWinner(player, cpu, marks) == True):
+            print(marks)
             break
         if(turns == 9):
             print("Tie! No one won.")
             break
         cpuTurn(cpu, marks)
+        gr.grid(marks)
+        if(checkWinner(player, cpu, marks) == True):
+            print(marks)
+            break
         turns+=1
         print('turns ',turns)
-        gr.grid(marks)
+        
         
 
 def playGame(player, cpu):
     yesNo = True
-    r = 1
+    r = 0
     while yesNo:
+        r+=1
         print('Lets start round ', r, '!')
         print()
         playRound(player, cpu)
         yesNo = u.validYN('Do you want to play another round? ')
-        r+=1
+        
     print("You won a total of ", player['wins'], " out of ", r)
     print("Thanks for playing! Good bye.")
